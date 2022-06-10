@@ -17,6 +17,7 @@ void display()
     glVertex2i(2, 2);
     glVertex2i(0, 2);
     glVertex2i(0, 0);
+    glColor3f();
     glEnd();
 
     // glBegin(GL_POLYGON); // 
