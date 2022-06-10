@@ -62,7 +62,7 @@ void myDisplay()
     squareShape(0, 80, 100, 80, 100, 60, 0, 60);
 
     //nature
-    glColor3f(0, 1, 0);
+    glColor3f(0.188, 0.592, 0.149);
     squareShape(0, 61, 75, 61, 75, 60, 0, 60);
     squareShape(0, 60, 5, 63, 10, 63, 15, 60);
     squareShape(20, 60, 25, 63, 30, 63, 35, 60);
@@ -119,6 +119,32 @@ void myDisplay()
     squareShape(64, 8, 100, 8, 100, 6, 62, 6);
     squareShape(62, 6, 100, 6, 100, 3, 60, 3);
     squareShape(60, 3, 100, 3, 100, 0, 57, 0);
+
+
+    //soli color
+    glColor3f(0.513, 0.968, 0.470);
+    squareShape(78, 60, 0, 60, 0, 50, 72, 50);
+    squareShape(72, 50, 0, 50, 0, 48, 71, 48);
+    squareShape(71, 48, 0, 48, 0, 46, 71, 46);
+    squareShape(71, 46, 0, 46, 0, 44, 72, 44);
+    squareShape(72, 44, 0, 44, 0, 42, 74, 42);
+    squareShape(74, 42, 0, 42, 0, 40, 76, 40);
+    squareShape(76, 40, 0, 40, 0, 38, 76, 38);
+    squareShape(76, 38, 0, 38, 0, 36, 75, 36);
+    squareShape(75, 36, 0, 36, 0, 34, 73, 34);
+    squareShape(73, 34, 0, 34, 0, 30, 70, 30);
+    squareShape(72, 32, 0, 32, 0, 28, 68, 28);
+    squareShape(68, 28, 0, 28, 0, 26, 66, 26);
+    squareShape(66, 26, 0, 26, 0, 23, 66, 23);
+    squareShape(66, 23, 0, 23, 0, 20, 68, 20);
+    squareShape(68, 20, 0, 20, 0, 18, 70, 18);
+    squareShape(70, 18, 0, 18, 0, 16, 70, 16);
+    squareShape(70, 16, 0, 16, 0, 13, 68, 13);
+    squareShape(68, 13, 0, 13, 0, 10, 65, 10);
+    squareShape(65, 10, 0, 10, 0, 8, 62, 8);
+    squareShape(62, 8, 0, 8, 0, 6, 60, 6);
+    squareShape(60, 6, 0, 6, 0, 3, 58, 3);
+    squareShape(58, 3, 0, 3, 0, 0, 55, 0);
 
 
 
