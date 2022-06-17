@@ -147,8 +147,23 @@ void myDisplay()
     squareShape(58, 3, 0, 3, 0, 0, 55, 0);
 
 
-
-
+    // House
+    //Front Side
+    glColor3f(0.956, 0.933, 0.121);
+    squareShape(25, 35, 38, 35, 38, 27, 25, 27);
+    //left side
+    squareShape(17, 36.5, 17, 29, 25, 27, 25, 35);
+    //piller
+    glColor3f(0, 0, 0);
+    line(25, 35, 25, 27);
+    //Shed
+    glColor3f(0.756, 0.023, 0.047);
+    squareShape(20, 40, 35, 40, 41, 34, 26, 34);
+    //Shed left
+    triangleShape(15, 35, 20, 40, 21, 39);
+    //Shed shadow
+    glColor3f(0.380, 0.141, 0.149);
+    triangleShape(17, 36.5, 21, 39, 25, 35);
 
 
     glFlush();
