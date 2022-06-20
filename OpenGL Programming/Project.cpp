@@ -121,6 +121,7 @@ void myDisplay()
     squareShape(60, 3, 100, 3, 100, 0, 57, 0);
 
 
+
     //soli color
     glColor3f(0.513, 0.968, 0.470);
     squareShape(78, 60, 0, 60, 0, 50, 72, 50);
@@ -151,11 +152,20 @@ void myDisplay()
     //Front Side
     glColor3f(0.956, 0.933, 0.121);
     squareShape(25, 35, 38, 35, 38, 27, 25, 27);
+    //down  part
+    glColor3f(.5, .5, .5);
+    squareShape(25, 27, 38, 27, 39, 26, 25, 26);
+    squareShape(25, 27, 17, 29, 16, 28, 25, 26);
+
     //left side
+    glColor3f(0.956, 0.933, 0.121);
     squareShape(17, 36.5, 17, 29, 25, 27, 25, 35);
     //piller
     glColor3f(0, 0, 0);
     line(25, 35, 25, 27);
+    //r-piller
+    glColor3f(0, 0, 0);
+    line(38, 35, 38, 27);
     //Shed
     glColor3f(0.756, 0.023, 0.047);
     squareShape(20, 40, 35, 40, 41, 34, 26, 34);
@@ -164,6 +174,25 @@ void myDisplay()
     //Shed shadow
     glColor3f(0.380, 0.141, 0.149);
     triangleShape(17, 36.5, 21, 39, 25, 35);
+    //window-big
+    glColor3f(0, 0, 0);
+    squareShape(19, 34, 23, 33, 23, 30, 19, 31);
+    //window small-left
+    squareShape(26.5, 31, 28.5, 31, 28.5, 28.5, 26.5, 28.5);
+    //window small-right
+    squareShape(35, 31, 37, 31, 37, 28.5, 35, 28.5);
+
+    //Grill
+    glColor3f(1, 1, 1);
+    line(19, 32.5, 23, 31.5);
+    line(20, 30.5, 20, 34);
+    line(21, 30.5, 21, 33.5);
+    line(22, 30, 22, 33.5);
+    //door
+    glColor3f(0, 0, 0);
+    squareShape(30, 32, 33, 32, 33, 27, 30, 27);
+    glColor3f(1, 1, 1);
+    line(31.5, 32, 31.5, 27);
 
 
     glFlush();
@@ -173,7 +202,7 @@ int main(int argc, char** argv)
 {
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInit(&argc, argv);
-    glutInitWindowSize(1200, 620);
+    glutInitWindowSize(1000, 600);
     glutInitWindowPosition(0, 0);
     glutCreateWindow("AAI's WINDOW");
     init();
