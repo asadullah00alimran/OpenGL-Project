@@ -60,6 +60,9 @@ void myDisplay()
     //Sky
     glColor3f(0.580f, 0.945f, 1.0f);
     squareShape(0, 80, 100, 80, 100, 60, 0, 60);
+    //sun
+    glColor3f(1.0, 0.0, 0.0);
+    circle(60, 60, 0.1);
 
     //nature
     glColor3f(0.188, 0.592, 0.149);
@@ -122,6 +125,8 @@ void myDisplay()
 
 
 
+
+
     //soli color
     glColor3f(0.513, 0.968, 0.470);
     squareShape(78, 60, 0, 60, 0, 50, 72, 50);
@@ -148,7 +153,54 @@ void myDisplay()
     squareShape(58, 3, 0, 3, 0, 0, 55, 0);
 
 
-    // House
+
+    //tree
+    glColor3f(0.380, 0.141, 0.149);
+    squareShape(18, 39, 18, 42, 23, 42, 23, 39);
+    squareShape(18, 42, 16, 45, 17.6, 46.5, 21, 42);
+    squareShape(21, 42, 24, 46.5, 26, 46, 23, 42);
+    glColor3f(0.188, 0.592, 0.149);
+    circle(16, 43, 0.09);
+    circle(26, 42, 0.09);
+    circle(22, 47, 0.09);
+
+    // Back side House
+    //shed
+    glColor3f(0.4, 0.3, 0.4);
+    squareShape(9, 36, 14, 39, 17, 37, 16, 36);
+    glColor3f(1, 0.0, 0.1);
+    triangleShape(14, 39, 19, 39, 17, 37);
+    triangleShape(9, 36, 14, 39, 14.5, 38.5);
+    glColor3f(0, 0, 0);
+    squareShape(11, 30, 17, 29, 18, 28, 9, 29);
+    glColor3f(1, 0, 0);
+    squareShape(11, 36, 17, 36, 17, 29, 11, 30);
+    glColor3f(0, 0, 0);
+    squareShape(10, 30, 17, 29, 18, 28, 9, 29);
+    glColor3f(.1, .1, .8);
+    squareShape(12.5, 34.5, 15, 34, 15, 31.5, 12.5, 32);
+    //grill
+    glColor3f(1.0, 1.0, 1.0);
+    line(12.5, 33.25, 15, 32.75);
+    line(13.25, 34.5, 13.25, 31.75);
+    line(14.25, 34.25, 14.25, 31.50);
+
+
+
+
+
+    // glBegin(GL_POLYGON);
+    // glVertex2d(23, 45);
+    // glVertex2d(25, 45);
+    // glVertex2d(27, 42);
+    // glVertex2d(28, 45);
+    // glVertex2d(30, 45);
+    // glVertex2d(28, 40);
+    // glVertex2d(25, 40);
+    // glVertex2d(23, 45);
+
+
+    // front House
     //Front Side
     glColor3f(0.956, 0.933, 0.121);
     squareShape(25, 35, 38, 35, 38, 27, 25, 27);
