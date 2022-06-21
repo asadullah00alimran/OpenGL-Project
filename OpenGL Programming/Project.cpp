@@ -78,17 +78,19 @@ void cloudMove()
     }
     glutPostRedisplay();
 }
+
 void movingCloud()
 {
     glColor3f(1, 1, 1);
     cloudMove();
     glPushMatrix();
     glTranslatef(cloud1, -15, 0);
-    cloud(3, 5, 5, 88);
+    cloud(4, 5, 5, 88);
     cloud(3, 5, 8, 91);
     //cloud(3, 5, 12, 92);
     cloud(3, 5, 12, 87);
     cloud(3, 5, 7, 85);
+
     glPopMatrix();
 }
 void boatMove()
@@ -192,6 +194,8 @@ void myDisplay()
     squareShape(62, 6, 100, 6, 100, 3, 60, 3);
     squareShape(60, 3, 100, 3, 100, 0, 57, 0);
 
+
+
     //soli color
     glColor3f(0.513, 0.968, 0.470);
     squareShape(78, 60, 0, 60, 0, 50, 72, 50);
@@ -216,6 +220,24 @@ void myDisplay()
     squareShape(62, 8, 0, 8, 0, 6, 60, 6);
     squareShape(60, 6, 0, 6, 0, 3, 58, 3);
     squareShape(58, 3, 0, 3, 0, 0, 55, 0);
+
+    //Boat piller
+    glColor3f(0.380, 0.141, 0.149);
+    squareShape(68, 15, 69, 15, 69, 8, 68, 7);
+    //boat
+    glColor3f(0.0, 0.0, 0.0);
+    squareShape(69, 11, 72, 13, 72, 8.5, 69, 10);
+    squareShape(72, 13, 77, 13, 77, 8.5, 72, 8.5);
+    squareShape(77, 13, 80, 11.5, 80, 10, 77, 8.5);
+
+    glColor3f(0.380, 0.141, 0.149);
+    triangleShape(71, 11, 72, 12, 72, 10);
+    squareShape(72, 12, 77, 12, 77, 10, 72, 10);
+    triangleShape(77, 12, 78, 11, 77, 10);
+
+    //triangleShape();
+
+    //squareShape(71, 13, 80, 11.5, 80, 10, 77, 8.5);
 
     //tree
     glColor3f(0.380, 0.141, 0.149);

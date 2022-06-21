@@ -93,8 +93,6 @@ void movingCloud()
 void boatMove()
 {
     shift += 0.01;
-    //if(shift > 200)
-       // shift = 0;
     shift = (shift > 200) ? 0 : shift;
     glutPostRedisplay();
 }
@@ -315,6 +313,9 @@ void myDisplay()
     squareShape(30, 32, 33, 32, 33, 27, 30, 27);
     glColor3f(1, 1, 1);
     line(31.5, 32, 31.5, 27);
+
+
+
 
     glColor3f(0.3, 0.3, 1);
     glBegin(GL_POLYGON);
