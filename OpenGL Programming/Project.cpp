@@ -4,10 +4,13 @@
 #include <stdlib.h>
 #include<math.h>
 
+static float cloud1 = -20, ty = 0;
+static float shift = 0;
+
 void init()
 {
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
-    glOrtho(0, 100, 0, 80, 0, 100);
+    glOrtho(0, 100, 0, 85, 0, 100);
 }
 
 //Square Shape
@@ -30,25 +33,69 @@ void triangleShape(double x1, double y1, double x2, double y2, double x3, double
     glEnd();
 }
 //Line
-void line(double x1, double y1, double x2, double y2)
+void line(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2)
 {
     glBegin(GL_LINES);
     glVertex2d(x1, y1);
     glVertex2d(x2, y2);
     glEnd();
 }
+
 //Circle
-void circle(double x, double y, double r)
+void circle(GLfloat x, GLfloat y, GLfloat r)
 {
     int i;
     glBegin(GL_TRIANGLE_FAN);
     for (i = 0;i < 360;i++)
     {
-        x = x + cos((i * 3.14) / 180) * r;
-        y = y + sin((i * 3.14) / 180) * r;
+        x = x + cos((i * 3.116) / 180) * r;
+        y = y + sin((i * 3.1416) / 180) * r;
         glVertex2d(x, y);
     }
     glEnd();
+}
+
+void cloud(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
+{
+    int i = 0;
+    float angle;
+    GLfloat PI = 2.0f * 3.1416;
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2f(x, y);
+    for (i = 0;i < 100;i++)
+    {
+        angle = 2 * PI * i / 100;
+        glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
+    }
+    glEnd();
+}
+
+void cloudMove()
+{
+    cloud1 += .005;
+    if (cloud1 > 200) {
+        cloud1 = -20;
+    }
+    glutPostRedisplay();
+}
+void movingCloud()
+{
+    glColor3f(1, 1, 1);
+    cloudMove();
+    glPushMatrix();
+    glTranslatef(cloud1, -15, 0);
+    cloud(3, 5, 5, 88);
+    cloud(3, 5, 8, 91);
+    //cloud(3, 5, 12, 92);
+    cloud(3, 5, 12, 87);
+    cloud(3, 5, 7, 85);
+    glPopMatrix();
+}
+void boatMove()
+{
+    shift += 0.01;
+    shift = (shift > 200) ? 0 : shift;
+    glutPostRedisplay();
 }
 
 //Display Function
@@ -59,10 +106,23 @@ void myDisplay()
 
     //Sky
     glColor3f(0.580f, 0.945f, 1.0f);
-    squareShape(0, 80, 100, 80, 100, 60, 0, 60);
+    squareShape(0, 85, 100, 85, 100, 60, 0, 60);
     //sun
     glColor3f(1.0, 0.0, 0.0);
     circle(60, 60, 0.1);
+    line(60, 64, 54, 70.5);
+    line(60, 64, 54, 73);
+    line(60, 64, 56, 74);
+    line(60, 64, 58, 74);
+    line(60, 64, 60, 75);
+    line(60, 64, 62, 74);
+    line(60, 64, 64, 73);
+    line(60, 64, 66.5, 72);
+    line(60, 64, 68, 70);
+    line(60, 64, 68, 68);
+
+    //Cloud Moving
+    movingCloud();
 
     //nature
     glColor3f(0.188, 0.592, 0.149);
@@ -71,6 +131,15 @@ void myDisplay()
     squareShape(20, 60, 25, 63, 30, 63, 35, 60);
     squareShape(40, 60, 45, 63, 50, 63, 55, 60);
     squareShape(65, 60, 70, 63, 75, 63, 80, 60);
+
+    // hill
+    glColor3f(0.188, 0.592, 0.149);
+    triangleShape(42, 60, 58, 60, 50, 74);
+    triangleShape(46, 60, 62, 60, 54, 70);
+    triangleShape(49, 60, 65, 60, 59, 66);
+    triangleShape(58, 60, 75, 60, 70, 68);
+
+
 
     //river and land divider
     glColor3f(0.5f, 0.5f, 0.5f);
@@ -123,10 +192,6 @@ void myDisplay()
     squareShape(62, 6, 100, 6, 100, 3, 60, 3);
     squareShape(60, 3, 100, 3, 100, 0, 57, 0);
 
-
-
-
-
     //soli color
     glColor3f(0.513, 0.968, 0.470);
     squareShape(78, 60, 0, 60, 0, 50, 72, 50);
@@ -151,8 +216,6 @@ void myDisplay()
     squareShape(62, 8, 0, 8, 0, 6, 60, 6);
     squareShape(60, 6, 0, 6, 0, 3, 58, 3);
     squareShape(58, 3, 0, 3, 0, 0, 55, 0);
-
-
 
     //tree
     glColor3f(0.380, 0.141, 0.149);
@@ -184,20 +247,6 @@ void myDisplay()
     line(12.5, 33.25, 15, 32.75);
     line(13.25, 34.5, 13.25, 31.75);
     line(14.25, 34.25, 14.25, 31.50);
-
-
-
-
-
-    // glBegin(GL_POLYGON);
-    // glVertex2d(23, 45);
-    // glVertex2d(25, 45);
-    // glVertex2d(27, 42);
-    // glVertex2d(28, 45);
-    // glVertex2d(30, 45);
-    // glVertex2d(28, 40);
-    // glVertex2d(25, 40);
-    // glVertex2d(23, 45);
 
 
     // front House

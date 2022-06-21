@@ -1,4 +1,3 @@
-
 #include<windows.h>
 #include <GL/glut.h>
 #include <stdlib.h>
@@ -55,20 +54,20 @@ void circle(double x, double y, double r)
     glEnd();
 }
 
-// void cloud(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
-// {
-//     int i = 0;
-//     float angle;
-//     GLfloat PI = 2.0f * 3.1416;
-//     glBegin(GL_TRIANGLE_FAN);
-//     glVertex2f(x, y);
-//     for (i = 0;i < 100;i++)
-//     {
-//         angle = 2 * PI * i / 100;
-//         glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
-//     }
-//     glEnd();
-// }
+void cloud(GLfloat rx, GLfloat ry, GLfloat x, GLfloat y)
+{
+    int i = 0;
+    float angle;
+    GLfloat PI = 2.0f * 3.1416;
+    glBegin(GL_TRIANGLE_FAN);
+    glVertex2f(x, y);
+    for (i = 0;i < 100;i++)
+    {
+        angle = 2 * PI * i / 100;
+        glVertex2f(x + (cos(angle) * rx), y + (sin(angle) * ry));
+    }
+    glEnd();
+}
 
 void cloudMove()
 {
@@ -84,12 +83,11 @@ void movingCloud()
     cloudMove();
     glPushMatrix();
     glTranslatef(cloud1, -15, 0);
-    circle(5, 70, 0.01);
-    // cloud(3, 5, 5, 88);
-    // cloud(3, 5, 8, 91);
-    // cloud(3, 5, 12, 92);
-    // cloud(3, 5, 12, 87);
-    // cloud(3, 5, 7, 85);
+    cloud(3, 5, 5, 88);
+    cloud(3, 5, 8, 91);
+    cloud(3, 5, 12, 92);
+    cloud(3, 5, 12, 87);
+    cloud(3, 5, 7, 85);
     glPopMatrix();
 }
 void boatMove()
@@ -317,6 +315,54 @@ void myDisplay()
     squareShape(30, 32, 33, 32, 33, 27, 30, 27);
     glColor3f(1, 1, 1);
     line(31.5, 32, 31.5, 27);
+
+    glColor3f(0.3, 0.3, 1);
+    glBegin(GL_POLYGON);
+    glVertex2f(0, 0);
+    glVertex2f(0, 18);
+    glVertex2f(150, 18);
+    glVertex2f(150, 0);
+
+    glEnd();
+
+    glPushMatrix();
+
+
+    // we want to draw moving boat
+    boatMove();
+    glColor3f(1.0, 0.0, 0.0);
+    glBegin(GL_POLYGON);
+    glVertex2f(45 + shift, 20);
+    glVertex2f(5 + shift, 20);
+    glVertex2f(15 + shift, 10);
+    glVertex2f(35 + shift, 10);
+
+    glEnd();
+
+
+
+    glColor3f(0.160, 0.658, 0.203);
+    glBegin(GL_POLYGON);
+    glVertex2f(25 + shift, 30);
+    glVertex2f(25 + shift, 25);
+    glVertex2f(17.943 + shift, 25.019);
+
+    glEnd();
+
+
+    // fourth regular shape is octagon
+    glColor3f(0.0, 0.0, 0.0);
+    glBegin(GL_POLYGON);
+    glVertex2f(25 + shift, 25.0);
+    glVertex2f(25 + shift, 20);
+    glVertex2f(23 + shift, 20);
+    glVertex2f(23 + shift, 25);
+
+    glEnd();
+
+    glPopMatrix();
+
+
 
 
     glFlush();
