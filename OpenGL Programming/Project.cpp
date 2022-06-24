@@ -100,6 +100,7 @@ void boatMove()
     glutPostRedisplay();
 }
 
+
 //Display Function
 
 void myDisplay()
